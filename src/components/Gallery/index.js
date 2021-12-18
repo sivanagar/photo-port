@@ -3,13 +3,10 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 import PhotoList from '../PhotoList';
 
 function Gallery(props) {
-  const currentCategory = {
-    name: "commercial",
-    description: "Photos of grocery stores, food trucks, and other commercial projects",
-  }
+  const { currentCategory } = props;
   return (
     <section>
-      <h1>{capitalizeFirstLetter(currentCategory.name)}</h1>
+      <h1  data-testid="h1tag">{capitalizeFirstLetter(currentCategory.name)}</h1>
       <p>{currentCategory.description}</p>
       <PhotoList category={currentCategory.name} />
     </section>
